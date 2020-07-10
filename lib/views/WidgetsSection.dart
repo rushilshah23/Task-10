@@ -245,7 +245,6 @@ class _WidgetSpacerState extends State<WidgetSpacer> {
                     width: 50,
                     color: Colors.green,
                   ),
-          
                 ],
               ),
             ),
@@ -358,7 +357,10 @@ class _WidgetColouredFilteredState extends State<WidgetColouredFiltered> {
                     "It's easy to play around with color in Flutter widgets, and not just by modifying a color parameter. Check out the ColorFiltered widget, which lets you change and morph colors in weird and wonderful ways!"),
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text("Original Image",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              child: Text(
+                "Original Image",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -371,14 +373,18 @@ class _WidgetColouredFilteredState extends State<WidgetColouredFiltered> {
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text("Color Filtered - BLUE",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              child: Text(
+                "Color Filtered - BLUE",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: ColorFiltered(colorFilter: ColorFilter.mode(Colors.blue, BlendMode.modulate),
-                child:Image.asset('assets/Flower.jpg'),)
-              ),
+                  child: ColorFiltered(
+                colorFilter: ColorFilter.mode(Colors.blue, BlendMode.modulate),
+                child: Image.asset('assets/Flower.jpg'),
+              )),
             )
           ],
         ),
@@ -410,10 +416,16 @@ class _WidgetToolTipState extends State<WidgetToolTip> {
             Tooltip(
                 showDuration: Duration(seconds: 2),
                 message: "This is account box",
-                child: FlatButton.icon(
-                  onPressed: () {},
-                  icon: Icon(Icons.account_box),
-                  label: Text("try tool tip"),
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  child: Expanded(
+                    child: FlatButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.account_box),
+                      label: Text("try tool tip"),
+                    ),
+                  ),
                 ))
           ],
         ),
@@ -558,46 +570,6 @@ class _WidgetSizedBoxState extends State<WidgetSizedBox> {
               ),
             ),
           ),
-
-          // Container(
-          //   height: 200,
-          //   child: Row(
-          //     children: <Widget>[
-          //       Container(
-          //         height: 100,
-          //         color: Colors.red,
-          //       ),
-          //       SizedBox(
-          //         width: 20,
-          //       ),
-          //       Container(
-          //         height: 150,
-          //         color: Colors.yellowAccent),
-          //       SizedBox(width: 30),
-          //     ],
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 30,
-          // ),
-          // Container(
-          //   height: 200,
-          //   child: Row(
-          //     children: <Widget>[
-          //       SizedBox(
-          //         width: 40,
-          //       ),
-          //       Container(
-          //         height: 100,
-          //         color: Colors.green,
-          //       ),
-          //       SizedBox(width: 20),
-          //       Container(
-          //         height: 100,
-          //         color: Colors.purple),
-          //     ],
-          //   ),
-          // )
         ],
       ),
     );
