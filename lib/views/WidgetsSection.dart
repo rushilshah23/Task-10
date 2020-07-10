@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:Task7/widgets/widgetDescColumn.dart';
 
@@ -79,16 +81,20 @@ class _WidgetRichTextState extends State<WidgetRichText> {
                 title: "Rich Text",
                 description:
                     "The RichText widget displays text that uses multiple different styles. The text to display is described using a tree of TextSpan objects, each of which has an associated style that is used for that subtree. The text might break across multiple lines or might all be displayed on the same line depending on the layout constraints."),
-          Center(
-            child: RichText(text: TextSpan(
-              text: "This is ",
-              style: TextStyle(fontSize: 20,color: Colors.red),
-              children: <TextSpan>[
-                TextSpan(text: ' Rushil Shah',
-                style: TextStyle(color: Colors.grey[700],fontWeight: FontWeight.bold,fontSize: 30))
-              ]
-            )),
-          )
+            Center(
+              child: RichText(
+                  text: TextSpan(
+                      text: "This is ",
+                      style: TextStyle(fontSize: 20, color: Colors.red),
+                      children: <TextSpan>[
+                    TextSpan(
+                        text: ' Rushil Shah',
+                        style: TextStyle(
+                            color: Colors.grey[700],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30))
+                  ])),
+            )
           ],
         ),
       ),
@@ -108,6 +114,24 @@ class _WidgetSelectableTextState extends State<WidgetSelectableText> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Selectable Text"),
+      ),
+      body: ListView(
+        children: <Widget>[
+          widgetDescription(
+              title: "Selectable Text",
+              description:
+                  "The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints."),
+          SelectableText(
+            'Try to select this whole line and copy paste',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
+            cursorColor: Colors.blue,
+            autofocus: false,
+            showCursor: true,
+            enableInteractiveSelection: true,
+            
+          )
+        ],
       ),
     );
   }
