@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "353240029644",
+    "firebase_url": "https://flutter-database2.firebaseio.com",
+    "project_id": "flutter-database2",
+    "storage_bucket": "flutter-database2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353240029644:android:ff23f04aaeacf77f6f2569",
+        "android_client_info": {
+          "package_name": "com.example.Task7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353240029644-0n9a23igjp4r4m24e35tbdu91hopr7k7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeEYAhzX6VrEK5bKJw8UCHzP4jO7hUthg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353240029644-0n9a23igjp4r4m24e35tbdu91hopr7k7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353240029644:android:3527ebef2c4763a86f2569",
+        "android_client_info": {
+          "package_name": "com.example.ninja_id"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353240029644-0n9a23igjp4r4m24e35tbdu91hopr7k7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeEYAhzX6VrEK5bKJw8UCHzP4jO7hUthg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353240029644-0n9a23igjp4r4m24e35tbdu91hopr7k7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353240029644:android:ec75286d7c107d106f2569",
+        "android_client_info": {
+          "package_name": "com.example.task6app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353240029644-0n9a23igjp4r4m24e35tbdu91hopr7k7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeEYAhzX6VrEK5bKJw8UCHzP4jO7hUthg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353240029644-0n9a23igjp4r4m24e35tbdu91hopr7k7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
