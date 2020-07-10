@@ -209,7 +209,7 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => WidgetFlexible()));
+                                builder: (context) => WidgetToolTip()));
                       },
                       child: Center(
                         child: Text(

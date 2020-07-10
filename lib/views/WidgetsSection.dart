@@ -163,7 +163,7 @@ class _WidgetFlexibleState extends State<WidgetFlexible> {
                 children: <Widget>[
                   Flexible(
                     flex: 2,
-                    fit: FlexFit.tight,
+                    fit: FlexFit.loose,
                     child: Container(
                       color: Colors.blue,
                     ),
@@ -172,7 +172,6 @@ class _WidgetFlexibleState extends State<WidgetFlexible> {
                     flex: 1,
                     fit: FlexFit.loose,
                     child: Container(
-                      
                       color: Colors.cyan,
                     ),
                   ),
@@ -204,7 +203,54 @@ class _WidgetSpacerState extends State<WidgetSpacer> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("WidgetSpacer State"),
+        title: Text("Spacer"),
+      ),
+      body: Center(
+        child: ListView(
+          children: <Widget>[
+            widgetDescription(
+                title: "Spacer",
+                description:
+                    "Spacer creates an adjustable, empty spacer that can be used to tune the spacing between widgets in a Flex container, like Row or Column."),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    height: 100,
+                    width: 50,
+                    color: Colors.grey,
+                  ),
+                  Spacer(
+                    flex: 2,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 50,
+                    color: Colors.blue,
+                  ),
+                  Spacer(
+                    flex: 5,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 50,
+                    color: Colors.red,
+                  ),
+                  Spacer(
+                    flex: 6,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 50,
+                    color: Colors.green,
+                  ),
+          
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -221,7 +267,35 @@ class _WidgetDividerState extends State<WidgetDivider> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("WidgetDivider"),
+        title: Text("Divider"),
+      ),
+      body: Column(
+        children: <Widget>[
+          widgetDescription(
+              title: "Divider",
+              description:
+                  "When two widgets need some space from each other it can be helpful to draw a line between them. The Divider widget is useful wherever you have widgets or groups of widgets that need to be separated."),
+          Container(
+            height: 100,
+            color: Colors.orange,
+          ),
+          Divider(
+            height: 50,
+            color: Colors.black,
+          ),
+          Container(
+            height: 100,
+            color: Colors.blue,
+          ),
+          Divider(
+            height: 50,
+            color: Colors.black,
+          ),
+          Container(
+            height: 100,
+            color: Colors.red,
+          )
+        ],
       ),
     );
   }
@@ -240,6 +314,24 @@ class _WidgetIgnorePointerState extends State<WidgetIgnorePointer> {
         centerTitle: true,
         title: Text("Ignore Pointer"),
       ),
+      body: Column(
+        children: <Widget>[
+          widgetDescription(
+              title: "Ignore Pointer",
+              description:
+                  "It can be useful to prevent the user from interacting with parts of your app. When the UI changes under users' fingers, that's actually a pretty common and frustrating problem. You could address this problem by disabling all interactive elements in your app, one by one, or you could use IgnorePointer."),
+          IgnorePointer(
+            ignoring: true,
+            child: Center(
+              child: Container(
+                child: RaisedButton(
+                    onPressed: () {},
+                    child: Text("Try to press and it will ignore you")),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -255,7 +347,41 @@ class _WidgetColouredFilteredState extends State<WidgetColouredFiltered> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Coloured Filter"),
+        title: Text("Colour Filter"),
+      ),
+      body: Container(
+        child: ListView(
+          children: <Widget>[
+            widgetDescription(
+                title: "Color Filter",
+                description:
+                    "It's easy to play around with color in Flutter widgets, and not just by modifying a color parameter. Check out the ColorFiltered widget, which lets you change and morph colors in weird and wonderful ways!"),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text("Original Image",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Image.asset('assets/Flower.jpg'),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text("Color Filtered - BLUE",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: ColorFiltered(colorFilter: ColorFilter.mode(Colors.blue, BlendMode.modulate),
+                child:Image.asset('assets/Flower.jpg'),)
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -274,6 +400,24 @@ class _WidgetToolTipState extends State<WidgetToolTip> {
         centerTitle: true,
         title: Text("Tool Tip"),
       ),
+      body: Container(
+        child: ListView(
+          children: <Widget>[
+            widgetDescription(
+                title: "Tool Tip",
+                description:
+                    "In Flutter, Tooltip widget is a material design tooltip used to let user know about the functionality of a button or UI action. When a widget is equipped with tooltip, if user long presses the widget or some appropriate action on the widget, tooltip appears as a floating label"),
+            Tooltip(
+                showDuration: Duration(seconds: 2),
+                message: "This is account box",
+                child: FlatButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.account_box),
+                  label: Text("try tool tip"),
+                ))
+          ],
+        ),
+      ),
     );
   }
 }
@@ -291,6 +435,42 @@ class _WidgetAspectRatioState extends State<WidgetAspectRatio> {
         centerTitle: true,
         title: Text("Aspect Ratio"),
       ),
+      body: ListView(
+        children: <Widget>[
+          widgetDescription(
+              title: "Aspect Ratio",
+              description:
+                  "The AspectRatio widget can be used to adjust the aspect ratio of widgets in your app. Use it to keep the ratio of your widget’s width and height consistent when changing dimensions."),
+          Expanded(
+            child: Align(
+              alignment: Alignment.center,
+              child: AspectRatio(
+                aspectRatio: 1.5,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.center,
+              child: AspectRatio(
+                aspectRatio: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -307,6 +487,118 @@ class _WidgetSizedBoxState extends State<WidgetSizedBox> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Sized Box"),
+      ),
+      body: ListView(
+        children: <Widget>[
+          widgetDescription(
+              title: "Sized Box",
+              description:
+                  "Set the exact size of anything with the SizedBox widget. You can provide both dimensions, or just provide one and let the Flutter layout rules fill in the other."),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        height: 100,
+                        width: 50,
+                        color: Colors.blue,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 100,
+                        color: Colors.amber,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 100,
+                        color: Colors.green,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 100,
+                        color: Colors.purple,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 100,
+                        color: Colors.deepOrange,
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 100,
+                    color: Colors.brown,
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    height: 100,
+                    color: Colors.grey,
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // Container(
+          //   height: 200,
+          //   child: Row(
+          //     children: <Widget>[
+          //       Container(
+          //         height: 100,
+          //         color: Colors.red,
+          //       ),
+          //       SizedBox(
+          //         width: 20,
+          //       ),
+          //       Container(
+          //         height: 150,
+          //         color: Colors.yellowAccent),
+          //       SizedBox(width: 30),
+          //     ],
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 30,
+          // ),
+          // Container(
+          //   height: 200,
+          //   child: Row(
+          //     children: <Widget>[
+          //       SizedBox(
+          //         width: 40,
+          //       ),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.green,
+          //       ),
+          //       SizedBox(width: 20),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.purple),
+          //     ],
+          //   ),
+          // )
+        ],
       ),
     );
   }
