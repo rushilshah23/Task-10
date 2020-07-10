@@ -124,12 +124,11 @@ class _WidgetSelectableTextState extends State<WidgetSelectableText> {
           SelectableText(
             'Try to select this whole line and copy paste',
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             cursorColor: Colors.blue,
             autofocus: false,
             showCursor: true,
             enableInteractiveSelection: true,
-            
           )
         ],
       ),
@@ -149,6 +148,46 @@ class _WidgetFlexibleState extends State<WidgetFlexible> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Flexible State"),
+      ),
+      body: ListView(
+        children: <Widget>[
+          widgetDescription(
+              title: "Flexible Widget",
+              description:
+                  "Using a Flexible widget gives a child of a Row, Column, or Flex the flexibility to expand to fill the available space in the main axis (e.g., horizontally for a Row or vertically for a Column), but, unlike Expanded, Flexible does not require the child to fill the available space."),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              height: 300,
+              child: Column(
+                children: <Widget>[
+                  Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
+                    child: Container(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    fit: FlexFit.loose,
+                    child: Container(
+                      
+                      color: Colors.cyan,
+                    ),
+                  ),
+                  Flexible(
+                    flex: 3,
+                    fit: FlexFit.tight,
+                    child: Container(
+                      color: Colors.blueGrey,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
