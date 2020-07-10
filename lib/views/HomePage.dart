@@ -11,6 +11,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:Task7/widgets/signInButton.dart';
 import 'package:Task7/services/FireBaseService.dart';
 import 'package:Task7/widgets/snackbars.dart';
+import 'package:Task7/views/WidgetHome.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -170,7 +171,7 @@ class _HomePageState extends State<HomePage> {
             //     iconData: Icons.home,
             //     textData: "Sign in with Google",
             //     onPressed: () {}),
-            SizedBox(height: 16),
+            // SizedBox(height: 16),
             signInButton(() async {
               final prefs = await SharedPreferences.getInstance();
               await handleSignIn().then((value) {
@@ -191,6 +192,17 @@ class _HomePageState extends State<HomePage> {
                               userDetails: userDetails,
                             )));
               });
+            }),
+            SizedBox(
+              height: 16,
+            ),
+            formButton(context,
+                iconData: Icons.widgets,
+                textData: "Widgets", onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => WidgetHomePage()),
+              );
             })
           ],
         ));
