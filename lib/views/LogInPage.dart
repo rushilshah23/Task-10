@@ -13,7 +13,7 @@ import 'package:Task7/services/SnackbarPop.dart';
 
 class LoginPage extends StatefulWidget {
   final List userDetails;
-  LoginPage({this.userDetails});
+  LoginPage({this.userDetails}):assert(userDetails!=null);
   _LoginPageState createState() {
     return _LoginPageState();
   }
@@ -28,10 +28,16 @@ class _LoginPageState extends State<LoginPage> {
   initState() {
     super.initState();
 
-    userDetails = widget.userDetails;
+    setUserDetails();
     setSignIn();
     getUserData();
     fetchData();
+  }
+
+  void setUserDetails(){
+    setState(() {
+      userDetails = widget.userDetails;
+    });
   }
 
   String id, name, mobile, age;
@@ -57,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       prefs.setBool('isSignIn', true);
-      prefs.setStringList('UserDetails', userDetails);
+      prefs.setStringList('UserDetails', widget.userDetails);
     });
   }
 
@@ -110,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Expanded(
                 flex: 1,
-                child: textTile(text1: "Name : ", text2: name
+                child: textTile(text1: "Name : ", text2: name??'Set user name'
                     // userData[0] ?? 'your name'
                     // userDetails[1]
                     ),
               ),
               Expanded(
                 flex: 1,
-                child: textTile(text1: "Age : ", text2: age
+                child: textTile(text1: "Age : ", text2: age??'Set user age'
                     // userData[1] ?? 'your age'
                     // userDetails[1]
                     ),
@@ -126,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                   iconData: Icons.edit,
                   textData: 'Edit Profile', onPressed: () async {
                 final result = await Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => EditProfile()))
+                        MaterialPageRoute(builder: (context) => EditProfile(name: name,age: age,)))
                     .then((value) {
                   Scaffold.of(context)
                     ..removeCurrentSnackBar()

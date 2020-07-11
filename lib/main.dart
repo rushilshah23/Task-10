@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
    _loadData() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-     userDetails = prefs.getStringList('UserDetails');
+     userDetails = prefs.getStringList('UserDetails')??null;
      visited = prefs.getBool('isSignIn')??false;
     });
 

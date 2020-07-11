@@ -9,6 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:Task7/services/FireBaseService.dart';
 
 class EditProfile extends StatefulWidget {
+  final age;
+  final name;
+  EditProfile({this.name,this.age});
   @override
   _EditProfileState createState() => _EditProfileState();
 }
@@ -30,15 +33,21 @@ class _EditProfileState extends State<EditProfile> {
 
   void initState(){
     super.initState();
-    getspUserData();
-    if(spUserData!=null){
-      _editNameController = 
-      _editNameController = new TextEditingController(text: spUserData[0]??null);
-      _editAgeController = new TextEditingController(text:  spUserData[1]??null);
-    }else{
-      _editNameController =  new TextEditingController();
-      _editAgeController = new TextEditingController();
-    }
+    _editNameController = new TextEditingController(text: widget.name??null);
+    _editAgeController = new TextEditingController(text:  widget.age??null);
+
+
+
+
+    // getspUserData();
+    // if(spUserData!=null){
+    //   _editNameController = 
+    //   _editNameController = new TextEditingController(text: spUserData[0]??null);
+    //   _editAgeController = new TextEditingController(text:  spUserData[1]??null);
+    // }else{
+    //   _editNameController =  new TextEditingController();
+    //   _editAgeController = new TextEditingController();
+    // }
 
   }
 
