@@ -140,13 +140,13 @@ class _LoginPageState extends State<LoginPage> {
 
                   setState(() {
                     fetchData();
-                    Scaffold.of(context)
-                        .showSnackBar(SnackBar(content: Text("Details Saved")));
+                    // Scaffold.of(context)
+                    //     .showSnackBar(SnackBar(content: Text("Details Saved")));
                   });
                 });
-                Scaffold.of(context)
-                  ..removeCurrentSnackBar()
-                  ..showSnackBar(SnackBar(content: Text('$result')));
+                // Scaffold.of(context)
+                //   ..removeCurrentSnackBar()
+                //   ..showSnackBar(SnackBar(content: Text('$result')));
               }),
               SizedBox(
                 height: 16.0,
